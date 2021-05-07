@@ -6,10 +6,9 @@ jobs:
     steps:
       - name: Wemake styleguide
         uses: wemake-services/wemake-python-styleguide@0.15.2
-      - name: Adding dependencies
+      - name: Adding poetry
         run: |
         pip install poetry
-        poetry add wemake-python-styleguide
         make install
       - name: Using linter
         run: |
