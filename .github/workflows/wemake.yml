@@ -1,4 +1,5 @@
 - name: wemake-python-styleguide
+  on: push
   uses: wemake-services/wemake-python-styleguide@0.15.2
   script:
     - make lint
