@@ -1,5 +1,16 @@
-- name: wemake-python-styleguide
-  on: push
-  uses: wemake-services/wemake-python-styleguide@0.15.2
-  script:
-    - make lint
+name: linter
+on: [push]
+jobs:
+  wemake-styleguide-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wemake-services/wemake-python-styleguide@0.15.2
+      - name: Adding dependencies
+        run: |
+        pip install --upgrade pip
+        pip install poetry
+        poetry add wemake-python-styleguide
+        make install
+      - name: Using linter
+        run: |
+        make lint
