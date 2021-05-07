@@ -4,11 +4,12 @@ jobs:
   Wemake-styleguide-check:
     runs-on: ubuntu-latest
     steps:
-      - name: Wemake styleguide
-        uses: wemake-services/wemake-python-styleguide@0.15.2
-      - name: Adding poetry
+      - uses: wemake-services/wemake-python-styleguide@0.15.2
+      - uses: actions/checkout@v2
+      - name: Adding dependencies
         run: |
         pip install poetry
+        poetry add wemake-python-styleguide
         make install
       - name: Using linter
         run: |
