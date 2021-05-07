@@ -1,16 +1,50 @@
 name: linter
-on: [push]
+
+'on':
+  push:
+  pull_request:
+  workflow_dispatch:
+
 jobs:
-  Wemake-styleguide-check:
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+
     steps:
       - uses: wemake-services/wemake-python-styleguide@0.15.2
-      - uses: actions/checkout@v2
-      - name: Adding dependencies
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install poetry
         run: |
-        pip install poetry
-        poetry add wemake-python-styleguide
-        make install
-      - name: Using linter
+          pip install -U pip
+
+          curl -sSL \
+            "https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py" | python -
+
+          echo "${HOME}/.poetry/bin" >> $GITHUB_PATH
+
+      - name: Set up cache
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: venv-${{ matrix.python-version }}-${{ hashFiles('poetry.lock') }}
+
+      - name: Install dependencies
         run: |
-        make lint
+          poetry config virtualenvs.in-project true
+          poetry run pip install -U pip
+          poetry install
+
+      - name: Run tests
+        run: |
+          make lint
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          file: ./coverage.xml
