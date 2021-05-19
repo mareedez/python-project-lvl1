@@ -1,33 +1,46 @@
-"""Game engine"""
-import sys
+"""Game engine."""
 import random
+import sys
+
 import prompt
 
 
 def get_username():
-    """Get name from input"""
-    user_name = prompt.string('May I have your name? ')
-    return user_name
+    """Get name from input.
+
+    Returns:
+        user_name
+    """
+    return prompt.string('May I have your name? ')
 
 
-def random_number_generator():
-    """Creates random number"""
+def generate_random_number():
+    """Create random number.
+
+    Returns:
+        number in range from 1 to 100
+    """
     return random.randint(1, 100)
 
 
 def play_the_game(game):
-    """Main game script"""
+    """Run the main game script.
+
+    Args:
+        game: run selected game from the games folder
+    """
     user_name = get_username()
-    print('Welcome, {}!'.format(user_name))
+    print('Welcome, {0}!'.format(user_name))
     trials = 3
     print(game.rules())
     while trials:
         correct_answer, user_answer = game.get_answers()
         if correct_answer == user_answer:
-            print("Correct!\n")
+            print('Correct!\n')
             trials -= 1
             continue
-        print("'{}' is wrong answer. Correct answer was '{}'.".format(user_answer, correct_answer))
-        print('Let\'s try again,', user_name)
+        message = "'{0}' is wrong answer. Correct answer was '{1}'."
+        print(message.format(user_answer, correct_answer))
+        print("Let's try again,", user_name)
         sys.exit()
-    print("Congratulations, {}!".format(user_name))
+    print('Congratulations, {0}!'.format(user_name))
