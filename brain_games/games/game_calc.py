@@ -16,7 +16,7 @@ def question():
 
     Returns:
         first_number, second_number: random integers
-        random_operator: operator '-', '+', '*'
+        operation: random operator '-', '+', '*'
     """
     first_number = game_core.generate_random_number()
     second_number = game_core.generate_random_number()
