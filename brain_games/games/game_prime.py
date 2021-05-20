@@ -45,6 +45,6 @@ def get_answers():
     number = question()
     correct_answer = is_prime(number)
     quest = 'Question: {0} '
-    user_answer = input(quest.format(str(number)))
-    print('Your answer:', user_answer)
+    print(quest.format(number))
+    user_answer = input('Your answer: ')
     return correct_answer, user_answer
