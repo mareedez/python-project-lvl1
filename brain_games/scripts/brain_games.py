@@ -3,12 +3,8 @@
 
 
 def main():
-    """Brain-game main function.
-
-    Returns:
-        greeting
-    """
-    return 'Welcome!'
+    """Brain-game main function."""
+    print('Welcome')
 
 
 if __name__ == '__main__':
