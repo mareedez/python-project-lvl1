@@ -41,6 +41,6 @@ def play_the_game(game):
             continue
         message = "'{0}' is wrong answer. Correct answer was '{1}'."
         print(message.format(user_answer, correct_answer))
-        print("Let's try again,", user_name)
+        print("Let's try again, {0}!".format(user_name))
         sys.exit()
     print('Congratulations, {0}!'.format(user_name))
