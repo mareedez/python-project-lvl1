@@ -1,7 +1,8 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/mareedez/python-project-lvl1/maintainability)
 [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide) 
 ![linter](https://github.com/mareedez/python-project-lvl1/actions/workflows/wemake.yml/badge.svg)
-[![Actions Status](https://github.com/mareedez/python-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/mareedez/python-project-lvl1/actions/)
+
+
 ### 1. «Проверка на чётность»
 Запуск: _brain-even_
 [![asciicast](https://asciinema.org/a/ipXM1L14uuIuBNr0fVSc0FJ6R.svg)](https://asciinema.org/a/ipXM1L14uuIuBNr0fVSc0FJ6R)
