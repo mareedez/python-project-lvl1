@@ -37,7 +37,8 @@ def get_answers():
     """
     sequence = question()
     correct_answer = random.choice(sequence)
-    sequence_to_show = ' '.join(sequence).replace(correct_answer, '..')
+    sequence = ['..' if x == correct_answer else x for x in sequence]
+    sequence_to_show = ' '.join(sequence)
     quest = 'Question: {0} '
     user_answer = input(quest.format(sequence_to_show))
     print('Your answer:', user_answer)
