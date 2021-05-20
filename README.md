@@ -1,4 +1,7 @@
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a> [![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide) ![linter](https://github.com/mareedez/python-project-lvl1/actions/workflows/wemake.yml/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/mareedez/python-project-lvl1/maintainability)
+[![wemake-python-styleguide](https://img.shields.io/badge/style-wemake-000000.svg)](https://github.com/wemake-services/wemake-python-styleguide) 
+![linter](https://github.com/mareedez/python-project-lvl1/actions/workflows/wemake.yml/badge.svg)
+
 
 ### 1. «Проверка на чётность»
 Запуск: _brain-even_
