@@ -36,7 +36,7 @@ def play_the_game(game):
     while trials:
         correct_answer, user_answer = game.get_answers()
         if correct_answer == user_answer:
-            print('Correct!\n')
+            print('Correct!')
             trials -= 1
             continue
         message = "'{0}' is wrong answer. Correct answer was '{1}'."
