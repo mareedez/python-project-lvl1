@@ -29,8 +29,9 @@ def play_the_game(game):
     Args:
         game: run selected game from the games folder
     """
+    print('Welcome to the Brain Games!')
     user_name = get_username()
-    print('Welcome, {0}!'.format(user_name))
+    print('Hello, {0}!'.format(user_name))
     trials = 3
     print(game.rules())
     while trials:

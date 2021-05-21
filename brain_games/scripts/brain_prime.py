@@ -4,7 +4,7 @@ from brain_games.games import game_prime
 
 
 def main():
-    """Run brain-even game."""
+    """Run brain-prime game."""
     game_core.play_the_game(game_prime)
 
 
