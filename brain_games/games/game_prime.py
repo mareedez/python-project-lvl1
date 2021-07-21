@@ -1,6 +1,5 @@
 """Brain-prime logic."""
 from brain_games import game_core
-from sympy import isprime
 
 
 def question():
@@ -21,7 +20,13 @@ def is_prime(number):
     Returns:
         'yes' if number is prime else 'no'
     """
-    if isprime(number):
+    if number < 2:
+        return 'no'
+    res = 0
+    for index in range(2, number // 2 + 1):
+        if number % index == 0:
+            res = res + 1
+    if res <= 0:
         return 'yes'
     return 'no'
 
