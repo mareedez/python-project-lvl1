@@ -10,9 +10,7 @@ def question():
     Returns:
         first_number, second_number: random integers
     """
-    first_number = game_core.generate_random_number()
-    second_number = game_core.generate_random_number()
-    return first_number, second_number
+    return game_core.generate_random_number()
 
 
 def rules():
@@ -23,6 +21,25 @@ def rules():
     """
     return 'Find the greatest common divisor of given numbers.\n'
 
+def is_prime(num):
+    """Check if number is prime.
+
+    Args:
+        num: integer number
+
+    Returns:
+        'yes' if number is prime else 'no'
+    """
+    if num < 2:
+        return 'no'
+    res = 0
+    for index in range(2, num // 2 + 1):
+        if num % index == 0:
+            res = res + 1
+    if res <= 0:
+        return 'yes'
+    return 'no'
+
 
 def get_answers():
     """Get answer from user and correct answer.
@@ -31,9 +48,8 @@ def get_answers():
         correct_answer: expected answer
         user_answer: answer entered by the user
     """
-    first_number, second_number = question()
-    correct_answer = str(gcd(first_number, second_number))
-    quest = 'Question: {0} {1} '
-    user_answer = input(quest.format(first_number, second_number))
-    print('Your answer:', user_answer)
+    number = question()
+    correct_answer = is_prime(number)
+    print('Question: {0}'.format(str(number)))
+    user_answer = input('Your answer: ')
     return correct_answer, user_answer

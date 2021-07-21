@@ -5,7 +5,6 @@ from brain_games.games import game_prime
 
 def main():
     """Run brain-prime game."""
-    print("TEST")
     game_core.play_the_game(game_prime)
 
 
