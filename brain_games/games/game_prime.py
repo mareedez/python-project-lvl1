@@ -1,49 +1,39 @@
-"""Brain-prime logic."""
+"""Brain-gcd logic."""
+from math import gcd
+
 from brain_games import game_core
-from sympy import isprime
 
 
 def question():
-    """Generate random number.
+    """Generate math problem elements.
 
     Returns:
-        number: integer in range from 1 to 100
+        first_number, second_number: random integers
     """
-    return game_core.generate_random_number()
-
-
-def is_prime(number):
-    """Check if number is prime.
-
-    Args:
-        number: integer number
-
-    Returns:
-        'yes' if number is prime else 'no'
-    """
-    if isprime(number):
-        return 'yes'
-    return 'no'
+    first_number = game_core.generate_random_number()
+    second_number = game_core.generate_random_number()
+    return first_number, second_number
 
 
 def rules():
-    """Prime-game rules description.
+    """Gcd-game rules description.
 
     Returns:
         gameplay guidance
     """
-    return 'Answer "yes" if given number is prime. Otherwise answer "no".!!!'
+    return 'Find the greatest common divisor of given numbers.\n'
 
 
 def get_answers():
-    """Get answer from user and calculate correct answer.
+    """Get answer from user and correct answer.
 
     Returns:
         correct_answer: expected answer
         user_answer: answer entered by the user
     """
-    number = question()
-    correct_answer = is_prime(number)
-    print('Question: {0}'.format(str(number)))
-    user_answer = input('Your answer: ')
+    first_number, second_number = question()
+    correct_answer = str(gcd(first_number, second_number))
+    quest = 'Question: {0} {1} '
+    user_answer = input(quest.format(first_number, second_number))
+    print('Your answer:', user_answer)
     return correct_answer, user_answer
