@@ -33,7 +33,7 @@ def get_answers():
     """
     first_number, second_number = question()
     correct_answer = str(gcd(first_number, second_number))
-    quest = 'Question: {0} {1} '
+    quest = 'Question:!! {0} {1} '
     user_answer = input(quest.format(first_number, second_number))
     print('Your answer:', user_answer)
     return correct_answer, user_answer
