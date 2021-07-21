@@ -32,7 +32,7 @@ def rules():
     Returns:
         gameplay guidance
     """
-    return 'Answer "yes" if given number is prime. Otherwise answer "no".!!!!'
+    return 'Answer "yes" if given number is prime. Otherwise answer "no".!!!'
 
 
 def get_answers():
